@@ -5,7 +5,7 @@ import com.lab.lab2.thread.Calculate;
 import static com.lab.util.Operation.*;
 
 public class MyThreadSecondL2 implements Calculate {
-    private int n;
+    private final  int n;
 
     public MyThreadSecondL2(int n) {
         this.n = n;

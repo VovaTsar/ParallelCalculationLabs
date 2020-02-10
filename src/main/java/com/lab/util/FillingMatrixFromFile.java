@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public final class FillingMatrixFromFile {
 
-    public static synchronized double[][] fillingMatrix(int n, String message) throws IOException {
+    public static  double[][] fillingMatrix(int n, String message) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("numbers.txt"));
         String numbers = "";
         while (br.ready()) {

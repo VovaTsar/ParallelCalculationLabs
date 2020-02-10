@@ -1,29 +1,34 @@
-package com.lab.lab1.thread;
+package com.lab.lab3.thread.impl;
 
 import com.lab.exception.FillingRuntimeException;
+import com.lab.lab3.OperationForL3;
+import com.lab.lab3.ShowInformation;
+import com.lab.lab3.thread.Calculate;
 import com.lab.util.FillingMatrixFromFile;
 import com.lab.util.FillingVectorFromFile;
 
 import java.io.IOException;
 
-import static com.lab.util.Operation.*;
+import static com.lab.lab3.OperationForL3.*;
 
-public class MyThreadThirdL1 implements Runnable {
-    private final  int n;
+public class MyThreadThirdL3 implements Calculate {
+    private final int n;
+    private final ShowInformation showInformation;
 
-    public MyThreadThirdL1(int n) {
+    public MyThreadThirdL3(int n, ShowInformation showInformation) {
         this.n = n;
+        this.showInformation = showInformation;
     }
 
     @Override
-    public void run() {
+    public void executeComputing() {
         long time = System.currentTimeMillis();
         System.out.println(this.getClass().getName() + " start");
 
         double vectorResultD[] = calculate();
 
         long third = System.currentTimeMillis() - time;
-        showVector(vectorResultD, "Thread Second finished. Time: " + third + " Millis" + " Result:");
+        showInformation.showVector(vectorResultD, "Thread Second finished. Time: " + third + " Millis" + " Result:");
     }
 
     private double[] calculate() {

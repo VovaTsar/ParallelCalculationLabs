@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public final class FillingVectorFromFile {
 
-    public static synchronized double[] fillingVector(int n, String message) throws IOException {
+    public static  double[] fillingVector(int n, String message) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("numbers.txt"));
 
         String numbers = "";

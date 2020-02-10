@@ -1,23 +1,29 @@
-package com.lab.lab1.thread;
+package com.lab.lab3.thread.impl;
 
-import static com.lab.util.Operation.*;
+import com.lab.lab3.OperationForL3;
+import com.lab.lab3.ShowInformation;
+import com.lab.lab3.thread.Calculate;
 
-public class MyThreadSecondL1 implements Runnable {
-    private final  int n;
+import static com.lab.lab3.OperationForL3.*;
 
-    public MyThreadSecondL1(int n) {
+public class MyThreadSecondL3 implements Calculate {
+    private final int n;
+    private final ShowInformation showInformation;
+
+    public MyThreadSecondL3(int n, ShowInformation showInformation) {
         this.n = n;
+        this.showInformation = showInformation;
     }
 
     @Override
-    public void run() {
+    public void executeComputing() {
         long time = System.currentTimeMillis();
         System.out.println(this.getClass().getName() + " start");
 
         double vectorResultB[] = calculate();
 
         long second = System.currentTimeMillis() - time;
-        showVector(vectorResultB, "Thread Second finished. Time: " + second + " Millis" + " Result:");
+        showInformation.showVector(vectorResultB, "Thread Second finished. Time: " + second + " Millis" + " Result:");
 
     }
 

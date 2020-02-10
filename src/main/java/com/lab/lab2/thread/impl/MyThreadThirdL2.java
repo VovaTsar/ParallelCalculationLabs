@@ -1,5 +1,6 @@
 package com.lab.lab2.thread.impl;
 
+import com.lab.exception.FillingRuntimeException;
 import com.lab.lab2.thread.Calculate;
 import com.lab.util.FillingMatrixFromFile;
 import com.lab.util.FillingVectorFromFile;
@@ -31,13 +32,13 @@ public class MyThreadThirdL2 implements Calculate {
         double[][] matrixZ = randomMatrix(n);
         double[][] matrixM = randomMatrix(n);
         double[][] matrixX = randomMatrix(n);
-        double[] vectorB = new double[0];
-        double[][] matrixC = new double[0][0];
+        double[] vectorB;
+        double[][] matrixC;
         try {
             vectorB = FillingVectorFromFile.fillingVector(n, "Filling VectorB from file. It is Third thread ");
             matrixC = FillingMatrixFromFile.fillingMatrix(n, "Filling VectorB from file. It is Third thread");
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new FillingRuntimeException("Exception with Filling data!!!");
         }
 
         return subtractTwoVector(multiplyVectorToMatrix(vectorB, addTwoMatrix(matrixC, matrixZ)),

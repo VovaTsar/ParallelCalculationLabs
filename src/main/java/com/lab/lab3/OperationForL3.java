@@ -1,6 +1,6 @@
-package com.lab.util;
+package com.lab.lab3;
 
-public class Operation {
+public class OperationForL3 {
 
     public static double[] addTwoVector(double vectorFirst[], double vectorSecond[]) {
         for (int i = 0; i < vectorSecond.length; i++) {
@@ -59,7 +59,7 @@ public class Operation {
         return resultVector;
     }
 
-    public static  double[][] randomMatrix(int n) {
+    public static double[][] randomMatrix(int n) {
         double matrix[][] = new double[n][n];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
@@ -70,7 +70,7 @@ public class Operation {
         return matrix;
     }
 
-    public static  double[] randomVector(int n) {
+    public static double[] randomVector(int n) {
         double vector[] = new double[n];
         for (int i = 0; i < vector.length; i++) {
             vector[i] = 1;
@@ -79,13 +79,6 @@ public class Operation {
         return vector;
     }
 
-    public static synchronized void showVector(double vector[], String message) {
-        System.out.println(message);
-        for (double aVector : vector) {
-            System.out.print(aVector + " ");
-        }
-        System.out.println();
-    }
 
     public static synchronized void showMatrix(double matrix[][], String message) {
         System.out.println(message);

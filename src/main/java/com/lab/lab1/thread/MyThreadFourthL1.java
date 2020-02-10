@@ -3,12 +3,13 @@ package com.lab.lab1.thread;
 import static com.lab.util.Operation.*;
 
 public class MyThreadFourthL1 implements Runnable {
-    private int n;
+    private final  int n;
 
     public MyThreadFourthL1(int n) {
         this.n = n;
     }
 
+    @Override
     public void run() {
         long time = System.currentTimeMillis();
 
