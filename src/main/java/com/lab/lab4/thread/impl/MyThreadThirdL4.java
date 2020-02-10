@@ -1,22 +1,25 @@
-package com.lab.lab3.thread.impl;
+package com.lab.lab4.thread.impl;
 
 import com.lab.exception.FillingRuntimeException;
 import com.lab.lab3.ShowInformationL3;
-import com.lab.lab3.thread.Calculate;
+import com.lab.lab4.ShowInformationL4;
+import com.lab.lab4.thread.Calculate;
 import com.lab.util.FillingMatrixFromFile;
 import com.lab.util.FillingVectorFromFile;
 
 import java.io.IOException;
 
-import static com.lab.lab3.OperationForL3.*;
+import static com.lab.lab4.OperationForL4.*;
+import static com.lab.lab4.OperationForL4.addTwoMatrix;
+import static com.lab.lab4.OperationForL4.multiplyVectorToMatrix;
 
-public class MyThreadThirdL3 implements Calculate {
+public class MyThreadThirdL4  implements Calculate {
     private final int n;
-    private final ShowInformationL3 showInformationL3;
+    private final ShowInformationL4 showInformationL4;
 
-    public MyThreadThirdL3(int n, ShowInformationL3 showInformationL3) {
+    public MyThreadThirdL4(int n, ShowInformationL4 showInformationL4) {
         this.n = n;
-        this.showInformationL3 = showInformationL3;
+        this.showInformationL4 = showInformationL4;
     }
 
     @Override
@@ -27,7 +30,7 @@ public class MyThreadThirdL3 implements Calculate {
         double vectorResultD[] = calculate();
 
         long third = System.currentTimeMillis() - time;
-        showInformationL3.showVector(vectorResultD, "Thread Second finished. Time: " + third + " Millis" + " Result:");
+        showInformationL4.showVector(vectorResultD, "Thread Second finished. Time: " + third + " Millis" + " Result:");
     }
 
     private double[] calculate() {

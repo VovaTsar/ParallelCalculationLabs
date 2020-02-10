@@ -12,7 +12,7 @@ public class RunnerForL3 {
     public static void main(String[] args) {
 
         Semaphore semaphore = new Semaphore(1);
-        ShowInformation show = new ShowInformation(semaphore);
+        ShowInformationL3 show = new ShowInformationL3(semaphore);
 
         Runnable thread1 = new MyThreadFirstL3(8999, show)::executeComputing;
 

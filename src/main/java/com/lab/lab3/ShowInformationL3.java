@@ -2,10 +2,10 @@ package com.lab.lab3;
 
 import java.util.concurrent.Semaphore;
 
-public class ShowInformation {
+public class ShowInformationL3 {
     private final Semaphore semaphore;
 
-    public ShowInformation(Semaphore semaphore) {
+    public ShowInformationL3(Semaphore semaphore) {
         this.semaphore = semaphore;
     }
 

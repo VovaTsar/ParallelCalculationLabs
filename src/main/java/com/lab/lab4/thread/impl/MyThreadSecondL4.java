@@ -1,17 +1,18 @@
-package com.lab.lab3.thread.impl;
+package com.lab.lab4.thread.impl;
 
 import com.lab.lab3.ShowInformationL3;
-import com.lab.lab3.thread.Calculate;
+import com.lab.lab4.ShowInformationL4;
+import com.lab.lab4.thread.Calculate;
 
-import static com.lab.lab3.OperationForL3.*;
+import static com.lab.lab4.OperationForL4.*;
 
-public class MyThreadSecondL3 implements Calculate {
+public class MyThreadSecondL4 implements Calculate {
     private final int n;
-    private final ShowInformationL3 showInformationL3;
+    private final ShowInformationL4 showInformationL4;
 
-    public MyThreadSecondL3(int n, ShowInformationL3 showInformationL3) {
+    public MyThreadSecondL4(int n, ShowInformationL4 showInformationL4) {
         this.n = n;
-        this.showInformationL3 = showInformationL3;
+        this.showInformationL4 = showInformationL4;
     }
 
     @Override
@@ -22,7 +23,7 @@ public class MyThreadSecondL3 implements Calculate {
         double vectorResultB[] = calculate();
 
         long second = System.currentTimeMillis() - time;
-        showInformationL3.showVector(vectorResultB, "Thread Second finished. Time: " + second + " Millis" + " Result:");
+        showInformationL4.showVector(vectorResultB, "Thread Second finished. Time: " + second + " Millis" + " Result:");
 
     }
 
