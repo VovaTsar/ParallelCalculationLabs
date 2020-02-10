@@ -1,12 +1,12 @@
 package com.lab.lab1.thread;
 
 
-import static com.lab.lab1.util.Operation.*;
+import static com.lab.util.Operation.*;
 
-public class MyThreadFirst implements Runnable {
+public class MyThreadFirstL1 implements Runnable {
     private int n;
 
-    public MyThreadFirst(int n) {
+    public MyThreadFirstL1(int n) {
         this.n = n;
     }
 

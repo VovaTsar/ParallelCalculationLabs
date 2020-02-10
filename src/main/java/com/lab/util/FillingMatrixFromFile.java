@@ -1,4 +1,4 @@
-package com.lab.lab1.util;
+package com.lab.util;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

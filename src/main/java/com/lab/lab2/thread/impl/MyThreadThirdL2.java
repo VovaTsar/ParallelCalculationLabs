@@ -1,31 +1,32 @@
-package com.lab.lab1.thread;
+package com.lab.lab2.thread.impl;
 
-import com.lab.lab1.util.FillingMatrixFromFile;
-import com.lab.lab1.util.FillingVectorFromFile;
+import com.lab.lab2.thread.Calculate;
+import com.lab.util.FillingMatrixFromFile;
+import com.lab.util.FillingVectorFromFile;
 
 import java.io.IOException;
 
-import static com.lab.lab1.util.Operation.*;
+import static com.lab.util.Operation.*;
 
-public class MyThreadThird implements Runnable {
+public class MyThreadThirdL2 implements Calculate {
     private int n;
 
-    public MyThreadThird(int n) {
+    public MyThreadThirdL2(int n) {
         this.n = n;
     }
 
-    public void run() {
+    @Override
+    public void executeComputing() {
         long time = System.currentTimeMillis();
         System.out.println(this.getClass().getName() + " start");
 
         double vectorResultD[] = calculate();
 
         long third = System.currentTimeMillis() - time;
-        showVector(vectorResultD, "Thread Second finished. Time: " + third +" Millis"+ " Result:");
+        showVector(vectorResultD, "Thread Second finished. Time: " + third + " Millis" + " Result:");
     }
 
     private double[] calculate() {
-
         double[] vectorE = randomVector(n);
         double[][] matrixZ = randomMatrix(n);
         double[][] matrixM = randomMatrix(n);

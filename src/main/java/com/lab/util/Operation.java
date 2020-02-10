@@ -1,4 +1,4 @@
-package com.lab.lab1.util;
+package com.lab.util;
 
 public class Operation {
 

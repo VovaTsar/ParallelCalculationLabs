@@ -1,15 +1,18 @@
-package com.lab.lab1.thread;
+package com.lab.lab2.thread.impl;
 
-import static com.lab.lab1.util.Operation.*;
+import com.lab.lab2.thread.Calculate;
 
-public class MyThreadSecond implements Runnable {
+import static com.lab.util.Operation.*;
+
+public class MyThreadSecondL2 implements Calculate {
     private int n;
 
-    public MyThreadSecond(int n) {
+    public MyThreadSecondL2(int n) {
         this.n = n;
     }
 
-    public void run() {
+    @Override
+    public void executeComputing() {
         long time = System.currentTimeMillis();
         System.out.println(this.getClass().getName() + " start");
 
